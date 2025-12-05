@@ -1,19 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <title>Wkrótce startujemy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lisownia.pl — Powrót legendy</title>
+  <meta name="description" content="Lisownia.pl — strona tymczasowa. Pracujemy nad powrotem tej legendy. Dołącz na Discord: dc.lisownia.pl" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    body { 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      height: 100vh; 
-      font-family: sans-serif; 
+    :root{
+      --bg1: #050406; /* almost black */
+      --bg2: #0b0b10; /* dark */
+      --accent: #ff8a2b; /* orange accent */
+      --muted: #a6acc3;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:#e6eef8;
+      background: radial-gradient(1200px 600px at 50% 45%, rgba(255,130,30,0.12), transparent 30%), linear-gradient(180deg,var(--bg1),var(--bg2));
+      background-color:var(--bg1);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .card{
+      width:100%;
+      max-width:880px;
+      text-align:center;
+      padding:48px 36px;
+      border-radius:18px;
+      backdrop-filter: blur(6px) saturate(120%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,130,30,0.3); /* changed from blue-ish to orange */
+      transform: translateY(6px);
+      animation: floatIn .7s cubic-bezier(.2,.9,.34,1) both;
+    }
+
+    @keyframes floatIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+    .logo{
+      font-weight:800;
+      letter-spacing:4px;
+      font-size:48px;
+      margin:0 0 10px 0;
+      text-transform:uppercase;
+      text-shadow: 0 6px 28px rgba(255,130,30,0.08), 0 1px 0 rgba(0,0,0,0.6);
+    }
+
+    .sub{
+      font-weight:400;
+      color:var(--muted);
+      margin:0 0 18px 0;
+      font-size:16px;
+    }
+
+    .lines{
+      margin:18px 0 28px 0;
+      color:#ffd4a1;
+      font-size:18px;
+      line-height:1.6;
+    }
+
+    .muted{
+      color:var(--muted);
+      font-size:14px;
+      margin-top:10px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      appearance:none;
+      border:0;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:transform .12s ease, box-shadow .12s ease;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+    }
+
+    .btn:active{transform:translateY(1px)}
+
+    .btn-primary{
+      background: linear-gradient(90deg, rgba(255,130,30,0.95), rgba(255,100,0,0.95));
+      color:white;
+      padding:14px 20px;
+    }
+
+    .btn-ghost{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,130,30,0.4); /* orange border */
+      padding:12px 16px;
+    }
+
+    .btn.disabled{opacity:.45;pointer-events:none;}
+
+    .dc-url{
+      font-family:monospace;
+      font-size:13px;
+      color:var(--muted);
+      display:block;
+      margin-top:8px;
+    }
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    @media (max-width:520px){
+      .logo{font-size:32px;letter-spacing:2px}
+      .card{padding:28px}
+      .lines{font-size:16px}
     }
   </style>
 </head>
 <body>
-  <h1>Strona w budowie. Zapraszamy wkrótce!</h1>
+  <main class="card" role="main" aria-labelledby="heading">
+    <h1 id="heading" class="logo">LISOWNIA.PL</h1>
+    <p class="sub">Powrót legendy — tymczasowa strona</p>
+
+    <div class="lines" aria-live="polite">
+      <div>Pracujemy nad powrotem tej legendy...</div>
+      <div>Potrzebujemy jeszcze trochę czasu.</div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://dc.lisownia.pl" target="_blank" rel="noopener">Dołącz na Discord</a>
+      <a class="btn btn-ghost btn disabled" href="#" aria-disabled="true">Trailer (wkrótce)</a>
+    </div>
+
+    <span class="dc-url">dc.lisownia.pl</span>
+
+    <footer>
+      <div>© Lisownia.pl — Tymczasowa strona</div>
+    </footer>
+  </main>
 </body>
 </html>
