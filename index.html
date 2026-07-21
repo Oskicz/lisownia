@@ -3,157 +3,199 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lisownia.pl</title>
+  <title>Lisownia.pl — OFICJALNIE WRACAMY</title>
   <link rel="icon" type="image/png" href="https://i.imgur.com/hbhKDyf.png">
-  <meta name="description" content="Lisownia.pl — strona tymczasowa. Pracujemy nad powrotem tej legendy. Dołącz na Discord: dc.lisownia.pl" />
+  <meta name="description" content="Lisownia.pl — Oficjalny powrót legendy! Zobacz nasz najnowszy trailer i dołącz do społeczności na Discordzie." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg1: #050406; /* almost black */
-      --bg2: #0b0b10; /* dark */
-      --accent: #ff8a2b; /* orange accent */
+      --bg1: #050406;
+      --bg2: #0b0b10;
+      --accent: #fe6c1a;
+      --accent-glow: rgba(254, 108, 26, 0.4);
       --muted: #a6acc3;
-      --glass: rgba(255,255,255,0.03);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       color:#e6eef8;
-      background: radial-gradient(1200px 600px at 50% 45%, rgba(255,130,30,0.12), transparent 30%), linear-gradient(180deg,var(--bg1),var(--bg2));
-      background-color:var(--bg1);
+      /* Tło obrazkowe przyciemnione pomarańczowo-czarnym overlayem */
+      background: 
+        radial-gradient(circle at center, rgba(5, 4, 6, 0.65) 0%, rgba(5, 4, 6, 0.88) 100%),
+        linear-gradient(180deg, rgba(254, 108, 26, 0.15), rgba(5, 4, 6, 0.8)),
+        url('2026-07-21_04.59.01.png') center/cover no-repeat fixed;
+      background-color: var(--bg1);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:32px;
+      padding:24px;
     }
 
     .card{
       width:100%;
-      max-width:880px;
+      max-width:840px;
       text-align:center;
-      padding:48px 36px;
-      border-radius:18px;
-      backdrop-filter: blur(6px) saturate(120%);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,130,30,0.3); /* changed from blue-ish to orange */
-      transform: translateY(6px);
+      padding:56px 40px;
+      border-radius:24px;
+      backdrop-filter: blur(12px) saturate(140%);
+      -webkit-backdrop-filter: blur(12px) saturate(140%);
+      background: rgba(11, 11, 16, 0.75);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(254, 108, 26, 0.35);
       animation: floatIn .7s cubic-bezier(.2,.9,.34,1) both;
     }
 
-    @keyframes floatIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes floatIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
     .logo{
-      font-weight:800;
+      font-weight:900;
       letter-spacing:4px;
-      font-size:48px;
-      margin:0 0 10px 0;
+      font-size:56px;
+      margin:0 0 8px 0;
       text-transform:uppercase;
-      text-shadow: 0 6px 28px rgba(255,130,30,0.08), 0 1px 0 rgba(0,0,0,0.6);
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    }
+
+    /* Kolorowanie .PL */
+    .logo span {
+      color: var(--accent);
+      text-shadow: 0 0 25px var(--accent-glow);
     }
 
     .sub{
-      font-weight:400;
-      color:var(--muted);
-      margin:0 0 18px 0;
-      font-size:16px;
+      font-weight:800;
+      color: var(--accent);
+      margin:0 0 24px 0;
+      font-size:22px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      text-shadow: 0 0 15px var(--accent-glow);
     }
 
     .lines{
-      margin:18px 0 28px 0;
-      color:#ffd4a1;
+      margin:0 0 36px 0;
+      color:#e2e8f0;
       font-size:18px;
       line-height:1.6;
-    }
-
-    .muted{
-      color:var(--muted);
-      font-size:14px;
-      margin-top:10px;
+      font-weight:400;
     }
 
     .actions{
       display:flex;
-      gap:12px;
+      gap:16px;
       justify-content:center;
-      margin-top:18px;
+      align-items:center;
+      margin-top:20px;
       flex-wrap:wrap;
     }
 
     .btn{
       appearance:none;
       border:0;
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:600;
+      padding:16px 28px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:16px;
       cursor:pointer;
       text-decoration:none;
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       gap:10px;
-      transition:transform .12s ease, box-shadow .12s ease;
-      box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+      transition:all .2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .btn:active{transform:translateY(1px)}
-
-    .btn-primary{
-      background: linear-gradient(90deg, rgba(255,130,30,0.95), rgba(255,100,0,0.95));
-      color:white;
-      padding:14px 20px;
+    .btn:hover{
+      transform:translateY(-2px);
     }
 
-    .btn-ghost{
-      background:transparent;
-      color:var(--muted);
-      border:1px solid rgba(255,130,30,0.4); /* orange border */
-      padding:12px 16px;
+    .btn:active{
+      transform:translateY(1px);
     }
 
-    .btn.disabled{opacity:.45;pointer-events:none;}
+    /* Główny, wyróżniający się przycisk TRAILERA */
+    .btn-trailer{
+      background: linear-gradient(135deg, #fe6c1a 0%, #d94e00 100%);
+      color:#ffffff;
+      box-shadow: 0 8px 25px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.3);
+      border: 1px solid #ff8842;
+      flex: 1 1 240px;
+      max-width:320px;
+      font-size:18px;
+      padding:18px 32px;
+    }
+
+    .btn-trailer:hover{
+      box-shadow: 0 12px 35px rgba(254, 108, 26, 0.6);
+      filter: brightness(1.1);
+    }
+
+    /* Przycisk Discorda */
+    .btn-discord{
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      border: 1px solid rgba(254, 108, 26, 0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-discord:hover{
+      background: rgba(254, 108, 26, 0.15);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
 
     .dc-url{
-      font-family:monospace;
+      font-family: monospace;
       font-size:13px;
       color:var(--muted);
       display:block;
-      margin-top:8px;
+      margin-top:24px;
+      letter-spacing:1px;
     }
 
-    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;opacity:0.7}
 
-    @media (max-width:520px){
-      .logo{font-size:32px;letter-spacing:2px}
-      .card{padding:28px}
+    @media (max-width:600px){
+      .logo{font-size:36px;letter-spacing:2px}
+      .sub{font-size:18px;letter-spacing:2px}
+      .card{padding:36px 20px}
       .lines{font-size:16px}
+      .actions{flex-direction:column;width:100%}
+      .btn{width:100%;max-width:none}
     }
   </style>
 </head>
 <body>
   <main class="card" role="main" aria-labelledby="heading">
-    <h1 id="heading" class="logo">LISOWNIA.PL</h1>
-    <p class="sub">Powrót legendy — tymczasowa strona</p>
+    <h1 id="heading" class="logo">LISOWNIA<span>.PL</span></h1>
+    <p class="sub">OFICJALNIE WRACAMY</p>
 
     <div class="lines" aria-live="polite">
-      <div>Pracujemy nad powrotem tej legendy...</div>
-      <div>Potrzebujemy jeszcze trochę czasu.</div>
+      Długo na to czekaliście. Zobacz oficjalny trailer i przygotuj się na powrót!
     </div>
 
     <div class="actions">
-      <a class="btn btn-primary" href="https://dc.lisownia.pl" target="_blank" rel="noopener">Dołącz na Discord</a>
-      <a class="btn btn-ghost btn disabled" href="#" aria-disabled="true">Trailer (wkrótce)</a>
+      <!-- PODMIEŃ "LINK_DO_TRAILERA" NA JEBITNY LINK DO YOUTUBE/TIKTOKA -->
+      <a class="btn btn-trailer" href="https://www.youtube.com/watch?v=x2lfv_8KmxQ" target="_blank" rel="noopener">
+        ▶ ZOBACZ TRAILER
+      </a>
+      
+      <a class="btn btn-discord" href="https://dc.lisownia.pl" target="_blank" rel="noopener">
+        Dołącz na Discord
+      </a>
     </div>
 
     <span class="dc-url">dc.lisownia.pl</span>
 
     <footer>
-      <div>© Lisownia.pl — Tymczasowa strona</div>
+      <div>© Lisownia.pl — Wszelkie prawa zastrzeżone</div>
     </footer>
   </main>
 </body>
